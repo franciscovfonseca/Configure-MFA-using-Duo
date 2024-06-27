@@ -143,7 +143,7 @@ The Server VM will now require **Multi-Factor Authentication (MFA)** each time a
 
 <h2>Conclusion</h2>
 
-Our Duo Security-driven Multi-Factor Authentication (MFA) enhances Azure server security by seamlessly adding an extra layer of authentication.
+Our **Duo Security-driven Multi-Factor Authentication (MFA)** enhances **Azure Server Security** by seamlessly adding an **Extra Layer of Authentication**.
 
 With streamlined configuration, real-time monitoring, and customizable policies, it ensures robust protection for your digital assets.
 
