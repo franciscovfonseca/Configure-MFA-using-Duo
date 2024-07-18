@@ -1,8 +1,14 @@
+<br>
+
 <p align="center">
-<img src="https://i.imgur.com/VGKt0wo.png" height=20%" width="20%" alt="Duo Logo"/>
+<img src="https://github.com/user-attachments/assets/bcca3ad5-3bac-493d-bb73-00117e0de0c1" height=40%" width="40%" alt="Duo Logo"/>
 </p>
 
+<br>
+
 <h1>Setting Up MFA and Protecting RDP Using Duo (Server 2019)</h1>
+
+<br>
 
 <h2>Description</h2>
 
