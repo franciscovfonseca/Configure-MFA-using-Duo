@@ -6,7 +6,7 @@
 
 <br>
 
-<h1 align="center">Setting Up MFA and Protecting RDP Using Duo</h1> 
+<h1 align="center">Configuring MFA & Protecting RDP Using Duo</h1> 
 
 <br>
 
