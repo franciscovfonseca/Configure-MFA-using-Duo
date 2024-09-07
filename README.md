@@ -12,11 +12,11 @@
 
 <h2>Description</h2>
 
-In this lab, we'll elevate our *Azure Server 2019* security by **Integrating Multi-Factor Authentication (MFA) using Duo Security when using RDP**.
+In this lab, we'll increase our Azure Server 2019 security by integrating **Multi-Factor Authentication (MFA) using Duo Security when using RDP**.
 
-In an era where cyber threats are evolving, safeguarding your digital assets is paramount.
+Since we live in a world where cyber threats are constantly evolving, **Securing our Digital Assets** is absolutely crucial.
 
-This project aims to **Fortify your Azure Server Environment** by introducing an **Additional Layer of Authentication**, ensuring only authorized users gain access.
+This project focus on **Safeguarding our Azure Server Environment** by introducing an additional **Layer of Authentication**, ensuring only authorized users gain access.
 
 <br>
 
