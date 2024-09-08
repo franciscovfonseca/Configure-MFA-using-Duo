@@ -49,23 +49,23 @@ This project focus on **Safeguarding our Azure Server Environment** by introduci
 <br>
 
 <p align="center">
-<img src="https://github.com/user-attachments/assets/4d35b0d0-810d-43c2-bb88-a5ec22922a8b" height=70%" width="70%" alt="Duo Logo"/>
+<img src="https://github.com/user-attachments/assets/962cf86f-33b1-4472-8052-1e242a9e516c" height=70%" width="70%" alt="Duo Logo"/>
 </p>
 
 
 
 
-1. RDP connection
+❶ RDP Connection.
 
-2. Primary Authentication of Windows Credentials (domain or local user).
+❷ Primary Authentication of Windows Credentials (domain or local user).
 
-3. Duo Windows Logon Credential Provider connection established to Duo Security over TCP port 443.
+❸ Duo Windows Logon Credential Provider connection established to Duo Security over TCP Port 443.
 
-4. Secondary Authentication via Duo Security’s Service.
+❹ Secondary Authentication via Duo Security’s Service.
 
-5. Duo Windows Logon Credential Provider receives Authentication Response.
+❺ Duo Windows Logon Credential Provider receives Authentication Response.
 
-6. RDP Session logged in.
+❻ RDP Session logged in.
 
 <br>
 
@@ -122,9 +122,9 @@ Fill out the necessary fields ➜ and an email confirmation will be sent for Log
 <br>
 
 
-We'll then launch the mobile application on our smartphone and **Scan the QR code**.
+We'll then launch the **Mobile App** on our smartphone and **Scan the QR code**.
 
-💡 The application will guide us through the steps.
+💡 The Application will guide us through the steps to take.
 
 <img src="https://github.com/franciscovfonseca/Setting-Up-MFA-and-Protecting-RDP/assets/172988970/aea67b64-efa8-457b-9077-77483c97277c" height="30%" width="30%" alt="9"/><br />
 
@@ -140,48 +140,52 @@ We'll then launch the mobile application on our smartphone and **Scan the QR cod
 <summary> <h2>Step 3️⃣ - Install Duo Security on Server 2019 VM</h2> </summary>
 <br>
 
-Access the **Server 2019 VM**.
+The next thing we're going to do is RDP to the **Server 2019 VM**.
 
 <img src="https://github.com/franciscovfonseca/Setting-Up-MFA-and-Protecting-RDP/assets/172988970/b0032b4c-a16e-4e90-9ac7-3e0d73ac284e" height="70%" width="70%" alt="9"/><br />
 <br>
 <br>
 
 
-Log in to the **Duo Admin interface** (https://admin.duosecurity.com/login?next=%2F).
+Then Log in to the **Duo Admin interface** thorugh this link [this link](https://admin.duosecurity.com/login?next=%2F)
 
 <img src="https://github.com/franciscovfonseca/Setting-Up-MFA-and-Protecting-RDP/assets/172988970/e5bcc116-8208-41a0-81e4-e9080fb706a9" height="30%" width="30%" alt="9"/><br />
 <br>
 <br>
 
 
-Navigate to the left side and select "***Applications***", then choose "***Protect an Application***".
+Under "**Applications**" ➜ we'll click on the "**Protect an Application**" buton:
 
 <img src="https://github.com/franciscovfonseca/Setting-Up-MFA-and-Protecting-RDP/assets/172988970/f8013466-3bfd-47c6-9ec3-7fb4a988422e" height="70%" width="70%" alt="9"/><br />
 <br>
 <br>
 
 
-Search for **RDP** and click on "***Protect***" to proceed.
+Search for **RDP** ➜ and click on "***Protect***" to proceed.
 
 <img src="https://github.com/franciscovfonseca/Setting-Up-MFA-and-Protecting-RDP/assets/172988970/751ec7f9-b47e-4397-ab3f-1a317b0ce92a" height="70%" width="70%" alt="9"/><br />
 <br>
 <br>
 
 
-On the next page ➜ Download the "***Duo Authentication for Windows Login Installer***" package and open the downloaded file when finished.
+On the next page ➜ we'll click to Download the ```Duo Authentication for Windows Logon installer package```.
+
+We'll open the downloaded file when it's ready.
 
 <img src="https://github.com/franciscovfonseca/Setting-Up-MFA-and-Protecting-RDP/assets/172988970/c13f207f-c104-4f8c-9b6e-d0ab1f5ae9fc" height="70%" width="70%" alt="9"/><br />
 <br>
 <br>
 
 
-Copy and paste the **API Hostname**, **Integration Key**, and **Secret Key** into the Installer.
+Copy and paste the **API Hostname**, the **Integration Key** and the **Secret Key** into the Installer.
 
 <img src="https://github.com/franciscovfonseca/Setting-Up-MFA-and-Protecting-RDP/assets/172988970/a0bd0968-0831-45a6-bf64-fe21822d636a" height="70%" width="70%" alt="9"/><br />
 <br>
 
 <img src="https://github.com/franciscovfonseca/Setting-Up-MFA-and-Protecting-RDP/assets/172988970/f2b0230d-2ca0-4c4e-846a-b5f4b60d1d60" height="70%" width="70%" alt="9"/><br />
 <br>
+
+We'll proceed by clicking "**Next**" ➜ until we've finished **Installing DUO Security** ✅
 
 <img src="https://github.com/franciscovfonseca/Setting-Up-MFA-and-Protecting-RDP/assets/172988970/83f1cc48-3459-46b3-9394-d8f7fdcad566" height="50%" width="50%" alt="9"/><br />
 <br>
@@ -196,13 +200,13 @@ Copy and paste the **API Hostname**, **Integration Key**, and **Secret Key** int
 <summary> <h2>Step 4️⃣ - Log In as a User</h2> </summary>
 <br>
 
-After the installer completes, log in to the **Server 2019 VM**.
+Once **DUO Security is installed** ➜ log in again to the **Server 2019 VM** with the User ```Helpdesk```
 
 <img src="https://github.com/franciscovfonseca/Setting-Up-MFA-and-Protecting-RDP/assets/172988970/91f9caf6-e704-4c65-ad22-0ceebf2d19c9" height="70%" width="70%" alt="9"/><br />
 
 ✅ Congratulations!
 
-The Server VM will now require **Multi-Factor Authentication (MFA)** each time a user logs in using **Remote Desktop Protocol (RDP)**.
+The Server VM will now require **Multi-Factor Authentication (MFA)** each time a user ogs in using **Remote Desktop Protocol (RDP)**.
 
 <br>
 
