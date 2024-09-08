@@ -206,7 +206,7 @@ Once **DUO Security is installed** ➜ log in again to the **Server 2019 VM** wi
 
 ✅ Congratulations!
 
-The Server VM will now require **Multi-Factor Authentication (MFA)** each time a user ogs in using **Remote Desktop Protocol (RDP)**.
+The Server VM will now require **Multi-Factor Authentication (MFA)** each time a user logs in using **Remote Desktop Protocol (RDP)**.
 
 <br>
 
