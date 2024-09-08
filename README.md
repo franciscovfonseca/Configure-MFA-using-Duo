@@ -12,74 +12,132 @@
 
 <h2>Description</h2>
 
-In this lab, we'll increase our Azure Server 2019 security by integrating **Multi-Factor Authentication (MFA) using Duo Security when using RDP**.
+In this lab, we'll increase our Azure Server 2019 security by integrating **Multi-Factor Authentication (MFA**) using **Duo Security** when using RDP.
 
-Since we live in a world where cyber threats are constantly evolving, **Securing our Digital Assets** is absolutely crucial.
+Since we live in a world where cyber threats are constantly evolving ➜ **Securing our Digital Assets** is absolutely crucial.
 
 This project focus on **Safeguarding our Azure Server Environment** by introducing an additional **Layer of Authentication**, ensuring only authorized users gain access.
 
+  <details close> 
+  
+**<summary> 💡 </summary>**
+
+➡️ Duo integrates with Microsoft Windows Client & Server Operating Systems to add Two-Factor Authentication to Remote Desktop.
+
+  </details>
+
+<p align="center">
+<img src="https://github.com/user-attachments/assets/30f88f0e-d062-4180-bcb8-38c8f2b10da4" height=70%" width="70%" alt="Duo Logo"/>
+</p>
+
 <br>
 
+<br>
 
-
-<h2>Environments and Technologies Used</h2>
+<h2>Environments & Technologies Used</h2>
 
 - Microsoft Azure (Virtual Machine)
 - Remote Desktop
 - Cisco Duo Security RDP: https://duo.com/docs/rdp#first-steps
+
 <br>
 
-
-
-<h2>Step 1: Create Azure Server 2019 VM</h2>
 <br>
 
-Generate a **Virtual Machine** and choose the "***Windows Server 2019 Datacenter***" image.
+<h2>Network Diagram</h2>
+
+<br>
+
+<p align="center">
+<img src="https://github.com/user-attachments/assets/4d35b0d0-810d-43c2-bb88-a5ec22922a8b" height=70%" width="70%" alt="Duo Logo"/>
+</p>
+
+
+
+
+1. RDP connection
+
+2. Primary Authentication of Windows Credentials (domain or local user).
+
+3. Duo Windows Logon Credential Provider connection established to Duo Security over TCP port 443.
+
+4. Secondary Authentication via Duo Security’s Service.
+
+5. Duo Windows Logon Credential Provider receives Authentication Response.
+
+6. RDP Session logged in.
+
+<br>
+
+<br>
+
+<details close> 
+<summary> <h2>Step 1️⃣ - Create Azure Server 2019 VM</h2> </summary>
+<br>
+
+We'll first create an **Azure Virtual Machine** ➜ and select the ```Windows Server 2019 Datacenter - x64 Gen2``` as the **Image**.
 
 <img src="https://github.com/franciscovfonseca/Setting-Up-MFA-and-Protecting-RDP/assets/172988970/49ea21f9-e8ba-4088-9cad-9aaacfc03621)" height="70%" width="70%" alt="9"/><br />
+
 <br>
 
+We'll also create a User Account:
 
-Create a user profile with the role "***Helpdesk***", establish a **Password**, and ensure that **Remote Desktop Protocol (RDP)** on port 3389 is selected.
+- **Username** ➜ ```Helpdesk```
+- **Password** ➜ ⚠️ We'll take not of the Password because we'll be using it later
+- Ensure that **Remote Desktop Protocol (RDP)** on ```Port 3389``` is selected.
 
 <img src="https://github.com/franciscovfonseca/Setting-Up-MFA-and-Protecting-RDP/assets/172988970/ab536883-6b4f-46e4-9b17-7ac9dbb01ad2)" height="70%" width="70%" alt="9"/><br />
-<br>
+
 <br>
 
-<h2>Step 2: Sign Up for Duo Security and Create User</h2>
 <br>
 
-Register for a free trial on **Duo Security** (https://signup.duo.com/).
+  </details>
+
+<h2></h2>
+
+<details close> 
+<summary> <h2>Step 2️⃣ - Sign Up for Duo Security & Create a User</h2> </summary>
+<br>
+
+The next step is to register for a free trial on **Duo Security** (https://signup.duo.com/).
 
 <img src="https://github.com/franciscovfonseca/Setting-Up-MFA-and-Protecting-RDP/assets/172988970/50533bed-b148-478b-83d0-3c022e538b5f" height="70%" width="70%" alt="9"/><br />
 <br>
 <br>
 
 
-Navigate to the "***User***" section on the left-hand side, then choose "***Add User***".
+We'll navigate to the "**Users**" section on the left-hand side ➜ then click on "**Add User**".
 
 <img src="https://github.com/franciscovfonseca/Setting-Up-MFA-and-Protecting-RDP/assets/172988970/20f64f6e-a125-4324-818f-09327fdebad3" height="70%" width="70%" alt="9"/><br />
 <br>
 <br>
 
 
-Complete the necessary fields, and an email confirmation will be sent for login access.
+Fill out the necessary fields ➜ and an email confirmation will be sent for Login Access.
 
 <img src="https://github.com/franciscovfonseca/Setting-Up-MFA-and-Protecting-RDP/assets/172988970/ab4ec5bf-8a19-4c8a-9d28-b65f74c5139b" height="70%" width="70%" alt="9"/><br />
 <br>
 <br>
 
 
-Launch the mobile application on your smartphone and **scan the QR code**.
+We'll then launch the mobile application on our smartphone and **Scan the QR code**.
 
-The application will guide you through the steps.
+💡 The application will guide us through the steps.
 
 <img src="https://github.com/franciscovfonseca/Setting-Up-MFA-and-Protecting-RDP/assets/172988970/aea67b64-efa8-457b-9077-77483c97277c" height="30%" width="30%" alt="9"/><br />
-<br>
+
 <br>
 
+<br>
 
-<h2>Step 3: Install Duo Security on Server 2019 VM</h2>
+  </details>
+
+<h2></h2>
+
+<details close> 
+<summary> <h2>Step 3️⃣ - Install Duo Security on Server 2019 VM</h2> </summary>
 <br>
 
 Access the **Server 2019 VM**.
@@ -127,10 +185,15 @@ Copy and paste the **API Hostname**, **Integration Key**, and **Secret Key** int
 
 <img src="https://github.com/franciscovfonseca/Setting-Up-MFA-and-Protecting-RDP/assets/172988970/83f1cc48-3459-46b3-9394-d8f7fdcad566" height="50%" width="50%" alt="9"/><br />
 <br>
+
 <br>
 
+  </details>
 
-<h2>Step 4: Log In as User</h2>
+<h2></h2>
+
+<details close> 
+<summary> <h2>Step 4️⃣ - Log In as a User</h2> </summary>
 <br>
 
 After the installer completes, log in to the **Server 2019 VM**.
@@ -140,11 +203,18 @@ After the installer completes, log in to the **Server 2019 VM**.
 ✅ Congratulations!
 
 The Server VM will now require **Multi-Factor Authentication (MFA)** each time a user logs in using **Remote Desktop Protocol (RDP)**.
-<br>
-<br>
-<br>
+
 <br>
 
+<h2></h2>
+
+  </details>
+
+<br>
+
+<br>
+
+<br>
 
 
 <h2>Conclusion</h2>
