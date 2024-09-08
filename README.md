@@ -12,9 +12,9 @@
 
 <h2>Description</h2>
 
-In this lab, we'll increase our Azure Server 2019 security by integrating **Multi-Factor Authentication (MFA**) using **Duo Security** when using RDP.
+In this lab, we'll increase the security of our Azure Server 2019 by integrating **Multi-Factor Authentication (MFA**) using **Duo Security** when using RDP.
 
-Since we live in a world where cyber threats are constantly evolving ➜ **Securing our Digital Assets** is absolutely crucial.
+As we live in a world where cyber threats are constantly evolving ➜ **Securing our Digital Assets** is absolutely crucial.
 
 This project focus on **Safeguarding our Azure Server Environment** by introducing an additional **Layer of Authentication**, ensuring only authorized users gain access.
 
@@ -75,7 +75,9 @@ This project focus on **Safeguarding our Azure Server Environment** by introduci
 <summary> <h2>Step 1️⃣ - Create Azure Server 2019 VM</h2> </summary>
 <br>
 
-We'll first create an **Azure Virtual Machine** ➜ and select the ```Windows Server 2019 Datacenter - x64 Gen2``` as the **Image**.
+We'll first create an **Azure Virtual Machine**
+
+Select ```Windows Server 2019 Datacenter - x64 Gen2``` as the **Image**.
 
 <img src="https://github.com/franciscovfonseca/Setting-Up-MFA-and-Protecting-RDP/assets/172988970/49ea21f9-e8ba-4088-9cad-9aaacfc03621)" height="70%" width="70%" alt="9"/><br />
 
@@ -86,6 +88,8 @@ We'll also create a User Account:
 - **Username** ➜ ```Helpdesk```
 - **Password** ➜ ⚠️ We'll take not of the Password because we'll be using it later
 - Ensure that **Remote Desktop Protocol (RDP)** on ```Port 3389``` is selected.
+
+<br>
 
 <img src="https://github.com/franciscovfonseca/Setting-Up-MFA-and-Protecting-RDP/assets/172988970/ab536883-6b4f-46e4-9b17-7ac9dbb01ad2)" height="70%" width="70%" alt="9"/><br />
 
@@ -104,23 +108,20 @@ We'll also create a User Account:
 The next step is to register for a free trial on **Duo Security** (https://signup.duo.com/).
 
 <img src="https://github.com/franciscovfonseca/Setting-Up-MFA-and-Protecting-RDP/assets/172988970/50533bed-b148-478b-83d0-3c022e538b5f" height="70%" width="70%" alt="9"/><br />
-<br>
-<br>
 
+<br>
 
 We'll navigate to the "**Users**" section on the left-hand side ➜ then click on "**Add User**".
 
 <img src="https://github.com/franciscovfonseca/Setting-Up-MFA-and-Protecting-RDP/assets/172988970/20f64f6e-a125-4324-818f-09327fdebad3" height="70%" width="70%" alt="9"/><br />
-<br>
-<br>
 
+<br>
 
 Fill out the necessary fields ➜ and an email confirmation will be sent for Login Access.
 
 <img src="https://github.com/franciscovfonseca/Setting-Up-MFA-and-Protecting-RDP/assets/172988970/ab4ec5bf-8a19-4c8a-9d28-b65f74c5139b" height="70%" width="70%" alt="9"/><br />
-<br>
-<br>
 
+<br>
 
 We'll then launch the **Mobile App** on our smartphone and **Scan the QR code**.
 
@@ -147,7 +148,7 @@ The next thing we're going to do is RDP to the **Server 2019 VM**.
 <br>
 
 
-Then Log in to the **Duo Admin interface** thorugh this link [this link](https://admin.duosecurity.com/login?next=%2F)
+We'll then Log in to the **Duo Admin interface** thorugh [this link](https://admin.duosecurity.com/login?next=%2F)
 
 <img src="https://github.com/franciscovfonseca/Setting-Up-MFA-and-Protecting-RDP/assets/172988970/e5bcc116-8208-41a0-81e4-e9080fb706a9" height="30%" width="30%" alt="9"/><br />
 <br>
@@ -200,7 +201,7 @@ We'll proceed by clicking "**Next**" ➜ until we've finished **Installing DUO S
 <summary> <h2>Step 4️⃣ - Log In as a User</h2> </summary>
 <br>
 
-Once **DUO Security is installed** ➜ log in again to the **Server 2019 VM** with the User ```Helpdesk```
+Once **DUO Security is installed** ➜ we'll Log in again to the **Server 2019 VM** as the User ```Helpdesk```
 
 <img src="https://github.com/franciscovfonseca/Setting-Up-MFA-and-Protecting-RDP/assets/172988970/91f9caf6-e704-4c65-ad22-0ceebf2d19c9" height="70%" width="70%" alt="9"/><br />
 
