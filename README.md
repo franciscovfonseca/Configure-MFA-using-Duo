@@ -1,7 +1,7 @@
 <br>
 
 <p align="center">
-<img src="https://github.com/user-attachments/assets/bcca3ad5-3bac-493d-bb73-00117e0de0c1" height=40%" width="40%" alt="Duo Logo"/>
+<img src="https://github.com/user-attachments/assets/bcca3ad5-3bac-493d-bb73-00117e0de0c1" height=30%" width="30%" alt="Duo Logo"/>
 </p>
 
 <br>
